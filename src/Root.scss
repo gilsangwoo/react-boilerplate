@@ -1,0 +1,11 @@
+$test: 10px;
+.back {
+  display: flex;
+  background-color: green;
+  border-radius: $test;
+  box-sizing: border-box;
+}
+.title {
+  color: green;
+}
+
