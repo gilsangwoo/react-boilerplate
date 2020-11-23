@@ -1,22 +1,21 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const error = 'error';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const warn = 'warn';
+const off = 'off';
 module.exports = {
   root: true,
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
   parser: '@typescript-eslint/parser',
   extends: [
-    'prettier',
-    'airbnb-base',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
   ],
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
   parserOptions: {
     ecmaFeatures: {
       ecmaVersion: 2018,
@@ -29,16 +28,13 @@ module.exports = {
   plugins: ['react', '@typescript-eslint'],
   rules: {
     'prettier/prettier': 'error',
-    'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
-    'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define': 'off',
   },
   overrides: [
     {
       files: ['build-utils/*', 'webpack*.js'],
       rules: {
-        '@typescript-eslint/no-var-requires': 0,
-        'import/no-extraneous-dependencies': 0,
+        '@typescript-eslint/no-var-requires': off,
+        'import/no-extraneous-dependencies': off,
       },
     },
   ],

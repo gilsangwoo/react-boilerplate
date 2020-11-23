@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import className from 'classnames/bind';
 import styles from './PageHome.scss';
 
@@ -9,6 +9,7 @@ interface IListItem {
   title: string;
   isActive: boolean;
 }
+
 const listMock: Array<IListItem> = [
   {
     id: 1,
@@ -26,10 +27,11 @@ const listMock: Array<IListItem> = [
     isActive: false,
   },
 ];
+
 const PageHome: React.FunctionComponent = () => {
   const [list, setList] = useState<Array<IListItem>>(listMock);
   const handleClickItem = (activeId: number) => {
-    const activeList: Array<IListItem> = list.map(({ id, title }) => ({
+    const activeList: Array<IListItem> = list.map(({id, title}) => ({
       id,
       title,
       isActive: id === activeId,
@@ -39,12 +41,15 @@ const PageHome: React.FunctionComponent = () => {
   return (
     <div>
       <h1 className={cx('title')}>PageHome</h1>
-      {list.map(({ id, title }) => (
+      {list.map(({id, title, isActive}) => (
         <p key={id} onClick={() => handleClickItem(id)}>
           {title}
+          &nbsp;
+          {isActive ? 'true' : 'false'}
         </p>
       ))}
     </div>
   );
 };
+
 export default PageHome;
