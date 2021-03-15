@@ -28,7 +28,7 @@ const listMock: Array<IListItem> = [
   },
 ];
 
-const PageHome: React.FunctionComponent = () => {
+const PageHome = () => {
   const [list, setList] = useState<Array<IListItem>>(listMock);
   const handleClickItem = (activeId: number) => {
     const activeList: Array<IListItem> = list.map(({id, title}) => ({

@@ -11,6 +11,7 @@ module.exports = {
     // chunkFilename: '[name].bundle.js',
   },
   resolve: {
+    modules: ['node_modules'],
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.css', '.scss', '.json'],
   },
   module: {

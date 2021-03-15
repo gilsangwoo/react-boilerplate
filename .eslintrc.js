@@ -1,25 +1,22 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const error = 'error';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const warn = 'warn';
+// const warn = 'warn';
 const off = 'off';
 module.exports = {
-  root: true,
   env: {
     browser: true,
     es2021: true,
     node: true,
   },
-  parser: '@typescript-eslint/parser',
   extends: [
+    'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
+    'airbnb',
+    'airbnb/hooks',
     'plugin:prettier/recommended',
   ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      ecmaVersion: 2018,
-      sourceType: 'module',
       jsx: true,
     },
     ecmaVersion: 12,
@@ -27,15 +24,12 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': error,
+    'no-use-before-define': off,
+    '@typescript-eslint/no-use-before-define': [error],
+    'react/jsx-filename-extension': [
+      error,
+      {extensions: ['.js', '.jsx', '.ts', '.tsx']},
+    ],
   },
-  overrides: [
-    {
-      files: ['build-utils/*', 'webpack*.js'],
-      rules: {
-        '@typescript-eslint/no-var-requires': off,
-        'import/no-extraneous-dependencies': off,
-      },
-    },
-  ],
 };
