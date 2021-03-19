@@ -1,5 +1,5 @@
 const error = 'error';
-// const warn = 'warn';
+const warn = 'warn';
 const off = 'off';
 module.exports = {
   env: {
@@ -12,6 +12,8 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb',
     'airbnb/hooks',
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
@@ -31,6 +33,14 @@ module.exports = {
       error,
       {extensions: ['.js', '.jsx', '.ts', '.tsx']},
     ],
+    'jsx-a11y/click-events-have-key-events': warn, // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/click-events-have-key-events.md
+    'jsx-a11y/no-static-element-interactions': warn, // https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-static-element-interactions.md,
+    'jsx-a11y/no-noninteractive-element-interactions': warn, // 비대화형 요소(div, h, p)에 헨들러를 등록하지 않아야합니다.
+    'class-methods-use-this': off, // 클래스 내부의 매소드는 반드시 this를 포함하고 있어야합니다. 메소드 체이닝 을 하는 소스가 많기에 off합니다.
+    'no-unused-vars': off,
+    '@typescript-eslint/no-unused-vars': [error],
+    'react/prop-types': off,
+    'react/require-default-props': off,
   },
 };
 
