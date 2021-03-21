@@ -1,0 +1,13 @@
+node_modules/*
+dist
+*.svg
+*.ico
+*.json
+.gitignore
+*.md
+*.log
+*.lock
+*.d.ts
+./build/*
+.github
+.cache
