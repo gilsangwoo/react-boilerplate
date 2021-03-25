@@ -1,11 +1,6 @@
-$test: 10px;
-.back {
-  display: flex;
-  background-color: green;
-  border-radius: $test;
+* {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
 }
-.title {
-  color: green;
-}
-

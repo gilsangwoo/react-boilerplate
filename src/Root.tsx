@@ -1,13 +1,21 @@
-import * as React from "react";
-import { BrowserRouter } from "react-router-dom";
-import App from "./App";
+import React from 'react';
+import {Provider} from 'react-redux';
+import {BrowserRouter} from 'react-router-dom';
+import rootReducer from './reducers';
+import {createStore} from 'redux';
+import {RouterMain} from './views/routers';
+import './Root.scss';
+
+const store = createStore(rootReducer);
 
 const Root = () => {
-    return (
-        <BrowserRouter>
-            <App/>
-        </BrowserRouter>
-    );
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <RouterMain />
+      </BrowserRouter>
+    </Provider>
+  );
 };
 
 export default Root;
